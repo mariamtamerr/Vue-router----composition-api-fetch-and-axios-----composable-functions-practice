@@ -1,26 +1,57 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name:'App',
+  data() {
+    return {
+     
+    }
+  },
+
+  methods: {
+    goBack() {
+      this.$router.go(-1) // here hit is router NOT route .. route is for id params .. router is for navigation
+    } ,
+
+    goForward() {
+      this.$router.go(1)
+    },
+
+    redirect() {
+      this.$router.push({name:'Home'})
+      // or
+      // this.$router.push('/')
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<template>
+
+<div>
+
+  <router-link to="/">Home</router-link> <br/><br/>
+  <router-link to="/hello-world">Hello World</router-link> <br/><br/>
+  <router-link to="/jobs">Jobs</router-link>  <br/><br/>
+  <router-link to="/posts">Posts</router-link>  <br/><br/>
+
+
+  <!-- navgation  -->
+  <button @click="goBack">back</button> <br/>
+  <button @click="goForward">forward</button> <br/>
+  <button @click="redirect">redirect</button> <br/>
+
+  <main>
+    <router-view/>
+  </main>
+
+
+</div>
+
+
+
+</template>
+
+<style scoped>
+
 </style>

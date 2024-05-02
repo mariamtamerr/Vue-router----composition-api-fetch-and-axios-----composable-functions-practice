@@ -1,0 +1,7 @@
+{
+    "posts": [
+        {"title":"post 1", "id":1, "body": "lorem ipsum dolor sit amet lore mauris"},
+        {"title":"post 2", "id":2, "body": "lorem ipsum dolor sit amet lore mauris"},
+        {"title":"post 3", "id":3, "body": "lorem ipsum dolor sit amet lore mauris"}
+    ]
+}
